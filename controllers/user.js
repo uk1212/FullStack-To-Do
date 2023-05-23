@@ -17,7 +17,7 @@ export const login = async (req, res, next) => {
       return next(new ErrorHandler("Invalid username or password!", 404));
     }
 
-    createCookie(user, res, `welcome back, ${name}`, 201);
+    createCookie(user, res, `welcome back, ${user.name}`, 201);
   } catch (error) {
     next(error);
   }
